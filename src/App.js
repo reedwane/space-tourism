@@ -1,24 +1,21 @@
 import "./App.css";
-import { useState } from "react";
 import Home from "./Home";
 import Nav from "./Nav";
+import useContext from "./useContext";
 
 function App() {
-	const [loading, setLoading] = useState(true);
-	const [data, setData] = useState(false);
-	fetch("data.json")
-		.then((res) => res.json())
-		.then((result) => {
-			setData(result);
-			setLoading(false);
-		})
-		.catch((err) => console.log(err));
-
+	const { DataContext, contexts } = useContext();
+	const { data, loading, view } = contexts;
+	console.log(data);
 	return (
 		<div className="App">
-			<Nav />
-			{loading && <p>Loading...</p>}
-			{data && <Home data={data} />}
+			<DataContext.Provider value={contexts}>
+				<Nav />
+				<div className="display" context={contexts}>
+					{loading && <p>Loading...</p>}
+					{data && <Home />}
+				</div>
+			</DataContext.Provider>
 		</div>
 	);
 }

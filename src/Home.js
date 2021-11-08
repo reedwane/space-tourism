@@ -1,8 +1,9 @@
-const Home = (props) => {
-	const data = props.data;
+import Content from "./Content";
+const Home = () => {
 	return (
 		<div>
-			<h1>Home {data.crew[0].name}</h1>
+			<h1>Home</h1>
+			<Content />
 			<p>
 				So, you want to travel to Space Let’s face it; if you want to go to
 				space, you might as well genuinely go to outer space and not hover kind
