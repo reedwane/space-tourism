@@ -8,6 +8,8 @@ import Technology from "./Technology";
 import Crew from "./Crew";
 import Destination from "./partials/Destination";
 import LoadingContextProvider from "./Context/loadingContext";
+import CrewMan from "./partials/CrewMan";
+import Tech from "./partials/Tech";
 
 function App() {
 	return (
@@ -17,15 +19,21 @@ function App() {
 				<DataProvider>
 					<Nav />
 					<Routes>
-						<Route exact path='/' element={<Home />} />
+						<Route path='/' element={<Home />} />
 
-						<Route exact path='destinations/*' element={<Destinations />} >
+						<Route path='destinations/*' element={<Destinations />} >
 							<Route path=':name' element={<Destination />} />
 						</Route>
 
-						<Route exact path='crew' element={<Crew />} />
-						<Route exact path='technology' element={<Technology />} />
-						<Route exact path='*' element={<Home />} />
+						<Route path='crew/*' element={<Crew />}>
+							<Route path=':name' element={<CrewMan />} />
+						</Route>
+
+						<Route path='technology/*' element={<Technology />}>
+							<Route path=':name' element={<Tech />} />
+						</Route>
+
+						<Route path='*' element={<Home />} />
 
 					</Routes>
 					

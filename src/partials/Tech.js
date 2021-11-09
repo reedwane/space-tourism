@@ -3,21 +3,21 @@ import { useParams } from "react-router";
 import { DataContext } from "../Context/dataContext";
 import { useLoadingContext } from "../Context/loadingContext";
 
-const Destination = () => {
+const Tech = () => {
     const loading = useLoadingContext();
     const {data} = useContext(DataContext);
     const {name} = useParams();
 
     console.log(loading);
 
-    const destination = data.destinations.find(destination => {return destination.name === name} )
+    const tech = data.technology.find(tech => {return tech.name === name} )
 
     return ( 
         <div>
-            <h1>{destination.name}</h1>
+            <h1>{tech.name}</h1>
 
         </div>
      );
 }
  
-export default Destination;
+export default Tech;

@@ -7,7 +7,6 @@ const Home = () => {
 
 	const loading = useLoadingContext();
 	const {data} = useContext(DataContext);
-	console.log(data);
 	
 	return (
 		<div>

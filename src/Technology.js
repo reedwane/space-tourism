@@ -1,9 +1,31 @@
+import { Link } from "react-router-dom";
+import { Outlet } from "react-router";
+import { useContext } from "react";
+import { DataContext } from "./Context/dataContext";
+import { useLoadingContext } from "./Context/loadingContext";
+import Loading from "./partials/Loading";
+
 const Technology = () => {
-    return ( 
+    const loading = useLoadingContext()
+    const {data} = useContext(DataContext);
+    const technology = data.technology;
+    
+    return (
         <div>
-            <h1>Technology</h1>
+            <h1>Destination</h1>
+            {loading && <Loading />}
+            {data && <div className="content">
+                <div className="technology nav">
+                    {data && technology.map((tech) => (
+                            <Link to={tech.name} key={tech.name}>{technology.indexOf(tech)+1}</Link>
+                        ))}
+                </div>
+                
+                <Outlet />
+            </div>}
+            
         </div>
-     );
+      );
 }
  
 export default Technology;
