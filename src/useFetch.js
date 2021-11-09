@@ -1,9 +1,7 @@
 import { useEffect, useState} from "react";
-import { useLoadingContext, useSetLoadingContext } from "./Context/loadingContext";
+import { useSetLoadingContext } from "./Context/loadingContext";
 
 const useFetch = () => {
-	const loading = useLoadingContext();
-	console.log(loading);
 	const setLoading = useSetLoadingContext();
 	const [data, setData] = useState(false);
 	const [view, setView] = useState();

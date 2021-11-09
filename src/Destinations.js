@@ -12,7 +12,7 @@ const Destinations = () => {
     
     return (
         <div>
-            <h1>Destination</h1>
+            <h2>01 PICK YOUR DESTINATION</h2>
             {loading && <Loading />}
             {data && <div className="content">
                 <div className="destinations nav">
