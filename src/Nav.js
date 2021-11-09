@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import logo from './assets/shared/logo.svg';
 
 const Nav = () => {
 	return (
 		<div className="nav">
-			<img src="assets/shared/logo.svg" alt="logo" />
+			{/* <img src="assets/shared/logo.svg" alt="logo" /> */}
+			<img src={logo} alt="logo" />
 			<div className="line"></div>
 			<ul>
 				<li>

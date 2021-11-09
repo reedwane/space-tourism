@@ -1,23 +1,32 @@
 import { useEffect, useState} from "react";
-import { useSetLoadingContext } from "./Context/loadingContext";
+import { useLoadingContext, useSetLoadingContext } from "./Context/loadingContext";
 
 const useFetch = () => {
+	const loading = useLoadingContext();
+	console.log(loading);
 	const setLoading = useSetLoadingContext();
 	const [data, setData] = useState(false);
 	const [view, setView] = useState();
 
 	useEffect(() => { 
-		(async () => {
-			try {
-				setLoading(true);
-				const fetched = await fetch('data.json');
-				setData(await fetched.json());
-				setLoading(false);
-				setView(0);
-			} catch (error) {
-				console.log(error)
-			}
-	})()
+		if(localStorage.getItem("data")){
+			setData(JSON.parse(localStorage.getItem("data")));
+		}else{
+			(async () => {
+				try {
+					setLoading(true);
+					const fetched = await fetch('data.json');
+					const result = await fetched.json();
+					setData(result);
+					setLoading(false);
+					setView(0);
+					localStorage.setItem("data", JSON.stringify(result));
+				} catch (error) {
+					console.log(error)
+				}
+		})()
+		}
+		
 	}, [setLoading])
 
 	const contexts = { data, view, setView };
