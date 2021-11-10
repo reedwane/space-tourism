@@ -12,17 +12,20 @@ const Crew = () => {
     
     return (
         <div>
-            <h1>Destination</h1>
+            <h2>02 MEET YOUR CREW</h2>
             {loading && <Loading />}
             {data && <div className="content">
+
+            <Outlet />
                 <div className="crew nav">
                     {data && crew.map((crew) => (
-                            <Link to={crew.name} key={crew.name}>crewman</Link>
+                            <Link to={crew.name} key={crew.name}>circle </Link>
                         ))}
                 </div>
                 
-                <Outlet />
+                
             </div>}
+            
             
         </div>
       );

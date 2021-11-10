@@ -12,13 +12,18 @@ const Technology = () => {
     
     return (
         <div>
-            <h1>Destination</h1>
+            <h2>03 SPACE LAUNCH 101</h2>
             {loading && <Loading />}
             {data && <div className="content">
                 <div className="technology nav">
-                    {data && technology.map((tech) => (
-                            <Link to={tech.name} key={tech.name}>{technology.indexOf(tech)+1}</Link>
-                        ))}
+                    <ul>
+                        {data && technology.map((tech) => (
+                            <li>
+                                <Link to={tech.name} key={tech.name}>{technology.indexOf(tech)+1}</Link>
+                            </li>
+                            ))}
+                    </ul>
+                    
                 </div>
                 
                 <Outlet />

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@import 'variables';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: $body-family;
+}
+
+// body styles
+body{
+    background-color: $dark-background;
+    color: $body-text
+}
+
+// hamburger show and hide
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+// global nav style
+.nav{
+    img{
+        position: absolute;
+        z-index: 999;
+        padding: 5%;
+    }
+    #logo{
+        left: 0;
+    }
+
+    #ham{
+        right: 0;
+    }
+    ul{
+        z-index: -999;
+        padding: 20%;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vmax;
+        width: 60%;
+        background-color: hsla(0, 0%, 100%, 0.4);
+    }
+    li{
+        list-style-type: none;
+        text-indent: 0;
+        text-align: left;
+        a{
+            color: $text-white;
+        }
+    }
+}
+
+// heading font
+h1,h2,h3,h4{
+    font-family: $heading-family;
+    color: $text-white;
+}
+
+// home page styles
+.home{
+    // background-image: url('logo192.png');
+    padding-top: 112px;
+}
+

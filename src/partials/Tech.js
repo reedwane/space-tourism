@@ -14,7 +14,15 @@ const Tech = () => {
 
     return ( 
         <div>
-            <h1>{tech.name}</h1>
+            <div className='tech-section one'>
+                <p>THE TERMINOLOGY ...</p>
+                <h1>{tech.name}</h1>
+                <p>{tech.description}</p>
+            </div>
+            
+            <div className='tech-section one'>
+                <img src={tech.images.landscape} alt="destination" />
+            </div>
 
         </div>
      );

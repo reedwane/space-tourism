@@ -9,11 +9,12 @@ const Home = () => {
 	const {data} = useContext(DataContext);
 	
 	return (
-		<div>
+		<div className='home content'>
 			{loading && <Loading/>}
 			{data &&  <div className='home'>
-				<div className='home text-content'>
-					<h1>So, you want to travel to <span className="text largest">Space</span></h1>
+				<div className='text-content'>
+					<h5>So, you want to travel to</h5>
+					<h1>Space</h1>
 					
 					<p>
 						Let’s face it; if you want to go to

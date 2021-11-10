@@ -14,7 +14,18 @@ const CrewMan = () => {
 
     return ( 
         <div>
-            <h1>{crew.name}</h1>
+            <div className='crew-section one'>
+                <h3>{crew.role}</h3>
+
+                <h2 className='crew name'>{crew.name}</h2>
+
+                <p>{crew.bio}</p>
+            </div>
+
+            <div className='crew-section two'>
+                <img src={crew.images.png} alt="destination" />
+            </div>
+           
 
         </div>
      );

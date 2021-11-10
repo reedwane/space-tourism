@@ -1,4 +1,3 @@
-import "./App.css";
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DataProvider } from "./Context/dataContext";
 import Home from "./Home";
