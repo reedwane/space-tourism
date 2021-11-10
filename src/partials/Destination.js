@@ -16,7 +16,7 @@ const Destination = () => {
     return ( 
         <div>
             <h1>{destination.name.toUpperCase()}</h1>
-            <img src={destination.images.png} alt="destination" />
+            <img src={'.'+destination.images.png} alt="destination" />
 
             <p className='description'>
                 {destination.description}

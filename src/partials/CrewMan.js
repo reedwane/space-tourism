@@ -23,7 +23,7 @@ const CrewMan = () => {
             </div>
 
             <div className='crew-section two'>
-                <img src={crew.images.png} alt="destination" />
+                <img src={'.'+crew.images.png} alt="destination" />
             </div>
            
 

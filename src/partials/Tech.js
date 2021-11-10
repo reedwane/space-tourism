@@ -21,7 +21,7 @@ const Tech = () => {
             </div>
             
             <div className='tech-section one'>
-                <img src={tech.images.landscape} alt="destination" />
+                <img src={'.'+tech.images.landscape} alt="destination" />
             </div>
 
         </div>
