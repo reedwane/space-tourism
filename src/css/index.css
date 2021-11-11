@@ -10,6 +10,10 @@
 body {
   background-color: #0c0e18;
   color: #d2d8f9;
+  width: 100vw;
+}
+body .App {
+  height: 100vh;
 }
 
 .hide {
@@ -20,44 +24,134 @@ body {
   display: block;
 }
 
-.nav img {
+.menu {
+  display: inline-block;
+}
+
+.closed {
+  display: none;
+}
+
+.nav {
+  position: sticky;
+  top: 0%;
+  z-index: 1000;
+}
+.nav img, .nav .menu {
   position: absolute;
   z-index: 999;
-  padding: 5%;
+  padding: 6.5%;
+  width: 23.7%;
 }
 .nav #logo {
   left: 0;
 }
-.nav #ham {
+.nav .menu {
   right: 0;
+}
+.nav .ham {
+  position: relative;
+  display: none;
+  width: 100%;
+}
+.nav .open {
+  display: inline-block;
 }
 .nav ul {
   z-index: -999;
-  padding: 20%;
+  padding: 35% 10% 20%;
   z-index: 2;
   position: absolute;
   top: 0;
   right: 0;
   height: 100vmax;
-  width: 60%;
-  background-color: rgba(255, 255, 255, 0.4);
+  width: 67%;
+  background-color: #000000e0;
 }
 .nav li {
+  text-transform: uppercase;
   list-style-type: none;
   text-indent: 0;
   text-align: left;
+  margin-top: 10%;
 }
 .nav li a {
   color: white;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+}
+.nav li a .number {
+  font-weight: bold;
+  margin-right: 5%;
 }
 
-h1, h2, h3, h4 {
+h1 {
   font-family: "Bellefair", serif;
+  font-weight: normal;
   color: white;
+  font-size: 5rem;
+  text-transform: uppercase;
+  padding: 5%;
+}
+
+h5 {
+  font-family: "Bellefair", serif;
+  font-weight: normal;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 1%;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #d2d8f9;
+  letter-spacing: 0.2rem;
 }
 
 .home {
-  padding-top: 112px;
+  padding-top: 17%;
+  height: 100vh;
+  background: #0c0e18 url("../assets/home/background-home-mobile.jpg") 0 100%/100% no-repeat;
+  z-index: -2;
+}
+.home .text-content {
+  margin-top: 17%;
+}
+.home p {
+  padding: 2% 8%;
+  line-height: 1.5rem;
+}
+.home .circle {
+  display: inline-block;
+  padding: 0;
+}
+.home .circle:hover {
+  background-color: #9797976b;
+  width: 15em;
+  height: 15em;
+  border-radius: 7.5em;
+}
+.home .explore {
+  margin-top: 15%;
+  font-family: "Bellefair", serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #0c0e18;
+  background-color: white;
+  text-decoration: none;
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+  padding-top: 4.5rem;
+}
+
+.destinations {
+  padding-top: 17%;
+  height: 100vh;
+  background: #0c0e18 url("../assets/destination/background-destination-mobile.jpg") 0 100%/100% no-repeat;
+  z-index: -2;
+}
+.destinations img {
+  width: 50%;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -9,9 +9,9 @@ const Home = () => {
 	const {data} = useContext(DataContext);
 	
 	return (
-		<div className='home content'>
+		<div className='home'>
 			{loading && <Loading/>}
-			{data &&  <div className='home'>
+			{data &&  <div className='home-content'>
 				<div className='text-content'>
 					<h5>So, you want to travel to</h5>
 					<h1>Space</h1>
@@ -23,7 +23,7 @@ const Home = () => {
 						truly out of this world experience!
 					</p>
 				</div>
-					<Link className='circle explore' to='destinations/Moon'>Explore</Link>
+					<p className='circle'><Link className='explore' to='destinations/destination'>Explore</Link></p>
 				</div>
 			}
 		</div>

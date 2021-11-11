@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
 @import 'variables';
+@import 'mixins';
 
 *{
     margin: 0;
@@ -12,7 +13,12 @@
 // body styles
 body{
     background-color: $dark-background;
-    color: $body-text
+    color: $body-text;
+    width: 100vw;
+
+    .App{
+        height: 100vh;
+    }
 }
 
 // hamburger show and hide
@@ -22,51 +28,124 @@ body{
 .show{
     display: block;
 }
+.menu{
+    display: inline-block;
+}
+.closed{
+    display: none;
+}
 
 // global nav style
 .nav{
-    img{
+    position: sticky;
+    top: 0%;
+    z-index: 1000;
+    img, .menu{
         position: absolute;
         z-index: 999;
-        padding: 5%;
+        padding: 6.5%;
+        width: 23.7%;
     }
     #logo{
         left: 0;
     }
-
-    #ham{
+    
+    .menu{
         right: 0;
+    }
+    .ham{
+        position: relative;
+        display: none;
+        width: 100%;
+    }
+    .open{
+        display: inline-block;
     }
     ul{
         z-index: -999;
-        padding: 20%;
+        padding: 35% 10% 20%;
         z-index: 2;
         position: absolute;
         top: 0;
         right: 0;
         height: 100vmax;
-        width: 60%;
-        background-color: hsla(0, 0%, 100%, 0.4);
+        width: 67%;
+        background-color: $nav-mobile;
     }
     li{
+        text-transform: uppercase;
         list-style-type: none;
         text-indent: 0;
         text-align: left;
+        margin-top: 10%;
         a{
             color: $text-white;
+            text-decoration: none;
+            letter-spacing: .2rem;
+            .number{
+                font-weight: bold;
+                margin-right: 5%;
+            }
         }
     }
 }
 
 // heading font
-h1,h2,h3,h4{
-    font-family: $heading-family;
-    color: $text-white;
+h1{
+    @include header(5rem, 5%);
+}
+
+h5{
+    @include header(1rem, 1%);
+    font-family: $body-family;
+    color: $body-text;
+    letter-spacing: .2rem;
 }
 
 // home page styles
 .home{
-    // background-image: url('logo192.png');
-    padding-top: 112px;
+    @include mainCompRendered('../assets/home/background-home-mobile.jpg');
+
+    .text-content{
+        margin-top: 17%;
+    }
+    p{
+        padding: 2% 8%;
+        line-height: 1.5rem;
+    }
+
+    .circle{
+        display: inline-block;
+        padding: 0;
+        &:hover{
+            background-color: $light-background;
+            width: 15em;
+            height: 15em;
+            // border: 5rem solid black;
+            border-radius: 7.5em;
+        }
+    }
+    .explore{
+        margin-top: 15%;
+        font-family: $heading-family;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: $dark-background;
+        background-color: $text-white;
+        text-decoration: none;
+        display: inline-block;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5rem;
+        padding-top: 4.5rem;
+
+    }
+}
+
+.destinations{
+    @include mainCompRendered('../assets/destination/background-destination-mobile.jpg');
+    img{
+        width: 50%;
+    }
 }
 
