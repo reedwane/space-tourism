@@ -1,16 +1,29 @@
-@mixin mainCompRendered($bgimg){
-    padding-top: 17%;
+@mixin mainCompRendered($bgimg,$paddingtop){
+    padding-top: $paddingtop;
     height: 100vh;
     background: $dark-background url($bgimg) 0 100%/100% no-repeat;
     z-index: -2;
 }
 
-@mixin header($fontsize,$padding){
+@mixin header($fontsize,$margin){
     font-family: $heading-family;
     font-weight: normal;
     color: $text-white;
     font-size: $fontsize;
     text-transform: uppercase;
-    padding: $padding;
+    margin: $margin;
    
+}
+
+@mixin header5{
+    @include header(1rem, 1%);
+    font-family: $body-family;
+    color: $body-text;
+    letter-spacing: .2rem;
+}
+
+@mixin desc{
+    font-family: 'Barlow', sans-serif;
+    padding: 0% 8%;
+    line-height: 1.5rem;
 }

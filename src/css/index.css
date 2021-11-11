@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow:wght@200&family=Bellefair&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -91,7 +91,16 @@ h1 {
   color: white;
   font-size: 5rem;
   text-transform: uppercase;
-  padding: 5%;
+  margin: 5%;
+}
+
+h2 {
+  font-family: "Bellefair", serif;
+  font-weight: normal;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 6%;
 }
 
 h5 {
@@ -100,7 +109,7 @@ h5 {
   color: white;
   font-size: 1rem;
   text-transform: uppercase;
-  padding: 1%;
+  margin: 1%;
   font-family: "Barlow Condensed", sans-serif;
   color: #d2d8f9;
   letter-spacing: 0.2rem;
@@ -116,12 +125,14 @@ h5 {
   margin-top: 17%;
 }
 .home p {
-  padding: 2% 8%;
+  font-family: "Barlow", sans-serif;
+  padding: 0% 8%;
   line-height: 1.5rem;
 }
 .home .circle {
   display: inline-block;
   padding: 0;
+  margin-top: 10%;
 }
 .home .circle:hover {
   background-color: #9797976b;
@@ -145,13 +156,68 @@ h5 {
 }
 
 .destinations {
-  padding-top: 17%;
+  padding-top: 25%;
   height: 100vh;
   background: #0c0e18 url("../assets/destination/background-destination-mobile.jpg") 0 100%/100% no-repeat;
   z-index: -2;
 }
+.destinations h5 {
+  color: white;
+}
 .destinations img {
-  width: 50%;
+  width: 45%;
+  margin: 8%;
+}
+.destinations .comp-nav p {
+  font-family: "Bellefair", serif;
+  font-weight: normal;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 1%;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #d2d8f9;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  margin: 0 2%;
+  padding-bottom: 2%;
+}
+.destinations .comp-nav p:first-of-type {
+  border-bottom: 3px solid white;
+}
+.destinations .comp-nav .active {
+  color: white;
+  border-bottom: 3px solid white;
+}
+.destinations .description {
+  font-family: "Barlow", sans-serif;
+  padding: 0% 8%;
+  line-height: 1.5rem;
+}
+.destinations .travel-time {
+  border-top: 0.1em solid white;
+  margin: 7%;
+  padding: 7%;
+}
+.destinations .travel-time p {
+  font-family: "Bellefair", serif;
+  font-weight: normal;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 1%;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #d2d8f9;
+  letter-spacing: 0.2rem;
+}
+.destinations .travel-time p span {
+  font-family: "Bellefair", serif;
+  font-weight: normal;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 5%;
+  display: block;
 }
 
 /*# sourceMappingURL=index.css.map */

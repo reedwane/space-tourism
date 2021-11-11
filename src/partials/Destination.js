@@ -19,11 +19,21 @@ const Destination = () => {
     }
 
     const [image, setImage] = useState(Moon);
+    
+    // document.querySelector('.comp-nav p:first-of-type').classList.add('active')
+    
 
-    const destData = (index) => {
+    const destData = (index,e) => {
+        document.querySelectorAll('.comp-nav p').forEach(nav => nav.classList.remove('active'));
+        const defView = document.querySelector('.comp-nav p:first-of-type');
+        if(e.target === defView){
+            defView.style.borderBottom = '3px solid #FFFFFF';
+        }else{
+            defView.style.borderBottom = 'none';
+        }
+        e.target.classList.toggle('active');
         setDestData(data.destinations[index]);
         setImage(findImage(data.destinations[index].name));
-        console.log(image);
     }
     
 
@@ -31,13 +41,17 @@ const Destination = () => {
 
     return ( 
         <div>
-            <h1>{destination.name.toUpperCase()}</h1>
+           
             <img src={image} alt="destination" className='dest-image'/>
+            
+            <div className="comp-nav">
+                {data && data.destinations.map((destination) => (
+                                <p key={destination.name} onClick={(e) => destData(data.destinations.indexOf(destination),e)}>{destination.name}</p>
+                            ))}
+            </div>
+            
 
-            {data && data.destinations.map((destination) => (
-                            <p key={destination.name} onClick={() => destData(data.destinations.indexOf(destination))}>{destination.name}</p>
-                        ))}
-
+            <h2>{destination.name.toUpperCase()}</h2>
             <p className='description'>
                 {destination.description}
             </p>

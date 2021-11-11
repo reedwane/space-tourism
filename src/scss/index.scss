@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow:wght@200&family=Bellefair&display=swap');
 @import 'variables';
 @import 'mixins';
 
@@ -95,28 +95,29 @@ h1{
     @include header(5rem, 5%);
 }
 
+h2{
+    @include header(3rem, 6%);
+}
+
 h5{
-    @include header(1rem, 1%);
-    font-family: $body-family;
-    color: $body-text;
-    letter-spacing: .2rem;
+    @include header5;
 }
 
 // home page styles
 .home{
-    @include mainCompRendered('../assets/home/background-home-mobile.jpg');
+    @include mainCompRendered('../assets/home/background-home-mobile.jpg', 17%);
 
     .text-content{
         margin-top: 17%;
     }
     p{
-        padding: 2% 8%;
-        line-height: 1.5rem;
+        @include desc;
     }
 
     .circle{
         display: inline-block;
         padding: 0;
+        margin-top: 10%;
         &:hover{
             background-color: $light-background;
             width: 15em;
@@ -143,9 +144,48 @@ h5{
 }
 
 .destinations{
-    @include mainCompRendered('../assets/destination/background-destination-mobile.jpg');
-    img{
-        width: 50%;
+    @include mainCompRendered('../assets/destination/background-destination-mobile.jpg', 25%);
+
+    h5{
+        color: $text-white;
     }
+    img{
+        width: 45%;
+        margin: 8%;
+    }
+
+    .comp-nav{
+        p{
+            @include header5;
+            display: inline-block;
+            margin: 0 2%;
+            padding-bottom: 2%;
+            &:first-of-type{
+                border-bottom: 3px solid $text-white;
+            } 
+        }
+        .active{
+            color: $text-white;
+            border-bottom: 3px solid $text-white;
+        }
+    }
+
+    .description{
+        @include desc;
+    }
+    .travel-time{
+        border-top: .1em solid $text-white;
+        margin: 7%;
+        padding: 7%;
+
+        p{
+            @include header5;
+            span{
+                @include header(2rem, 5%);
+                display: block;
+            }
+        }
+    }
+
 }
 
