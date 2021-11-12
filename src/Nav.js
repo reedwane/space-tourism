@@ -4,14 +4,50 @@ import iconOpen from './assets/shared/icon-hamburger.svg';
 import iconClose from './assets/shared/icon-close.svg';
 
 const Nav = () => {
+
+	const setActive = () => {
+		
+		document.querySelectorAll('.nav li').forEach(nav => nav.classList.remove('active'));
+		const path = window.location.pathname.split('/')[1];
+		if(path){
+			document.querySelector('.nav li:first-of-type').style.borderBottom = 'none';
+			if(path === 'destinations'){
+				document.querySelector('.nav li:nth-of-type(2)').classList.add('active');
+			}else if(path === 'crew'){
+				document.querySelector('.nav li:nth-of-type(3)').classList.add('active');
+			}else{
+				document.querySelector('.nav li:last-of-type').classList.add('active');
+			}
+		}else{
+			document.querySelectorAll('.nav li').forEach(nav => nav.classList.remove('active'));
+			document.querySelector('.nav li:first-of-type').style.borderBottom = '2px solid #FFFFFF';	
+		}
+
+		
+	}
 	
-	
+	document.addEventListener('click', (e) => {
+		const navlist = document.querySelector('.nav ul');
+		const closed = document.querySelector('.closed');
+		const opened = document.querySelector('.opened');
+
+		if(e.target !== navlist && e.target !== closed
+			&& e.target !== opened && navlist.classList.contains('show')){
+			navlist.classList.toggle('show');
+			closed.classList.toggle('open');
+			opened.classList.toggle('open');
+
+		}
+		// navlist.classList.toggle('show');
+	})
 	
 	const toggleNavOpen = (e) => {
 		const navlist = document.querySelector('.nav ul');
 		e.target.classList.toggle('open');
 		e.target.nextElementSibling.classList.toggle('open');
 		navlist.classList.toggle('show');
+
+		
 	}
 
 	const toggleNavClose = (e) => {
@@ -33,9 +69,9 @@ const Nav = () => {
 				<img src={iconClose} alt="hamburger"  className='ham opened' onClick={toggleNavClose} />
 			</div>
 
-			<ul className='hide'>
+			<ul className='hide' onClick={() => setActive()}>
 				<li>
-					<Link to='/' ><span className="number">00</span> Home</Link>
+					<Link to='/'><span className="number">00</span> Home</Link>
 				</li>
 				<li>
 					<Link to='destinations/Moon' ><span className="number">01</span> Destinations</Link>	

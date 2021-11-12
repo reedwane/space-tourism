@@ -10,7 +10,7 @@ const Destinations = () => {
 
     return (
         <div className='destinations'>
-            <h5>01 PICK YOUR DESTINATION</h5>
+            <h5><span>01</span> PICK YOUR DESTINATION</h5>
             {loading && <Loading />}
             {data && <div className="content">
                 

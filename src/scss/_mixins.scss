@@ -1,7 +1,15 @@
+
+@mixin mq($minwidth){
+    @media screen and (min-width: $minwidth){
+        @content
+    }
+}
+
 @mixin mainCompRendered($bgimg,$paddingtop){
     padding-top: $paddingtop;
-    height: 100vh;
-    background: $dark-background url($bgimg) 0 100%/100% no-repeat;
+    min-height: 100vmax;
+    height: max-content;
+    background: $dark-background url($bgimg) center center/cover no-repeat fixed;
     z-index: -2;
 }
 
@@ -13,17 +21,28 @@
     text-transform: uppercase;
     margin: $margin;
    
+    @include mq(600px){
+        font-size: ($fontsize * 2);
+    }
 }
 
 @mixin header5{
     @include header(1rem, 1%);
     font-family: $body-family;
-    color: $body-text;
+    color: $text-white;
     letter-spacing: .2rem;
+    span{
+        color: $light-background;
+    }
 }
 
-@mixin desc{
+@mixin mobileImg($width,$margin){
+    width:$width;
+    margin: $margin;
+}
+
+@mixin desc($pdgside){
     font-family: 'Barlow', sans-serif;
-    padding: 0% 8%;
+    padding: 0% $pdgside;
     line-height: 1.5rem;
 }

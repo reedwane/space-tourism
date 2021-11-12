@@ -15,6 +15,8 @@ body{
     background-color: $dark-background;
     color: $body-text;
     width: 100vw;
+    max-width: 1440px;
+    margin: 0 auto;
 
     .App{
         height: 100vh;
@@ -34,6 +36,8 @@ body{
 .closed{
     display: none;
 }
+
+
 
 // global nav style
 .nav{
@@ -88,7 +92,58 @@ body{
             }
         }
     }
+
+
+    @include mq(600px){ // media query for larger than 600px
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 6em;
+        text-align: left;
+        
+        .menu{
+            display: none;
+        }
+        img{
+            position: relative;
+            text-align: left;
+            padding: 3% 5%;
+            width: 17%;
+        }
+
+        ul{
+            display: inline-block;
+            height: 100%;
+            width: 58%;
+            padding: 0%;
+            background-color: $light-background;
+            
+            li{
+                display: inline-block;
+                margin: 0;
+                margin-right: 1rem;
+                padding: 2.5rem 0;
+                
+            }
+            li:first-of-type{
+                border-bottom: 2px solid $text-white;
+            }
+            .active{
+                border-bottom: 2px solid $text-white;
+            }
+            
+            a{
+                display: inline-block;
+
+                span{
+                    display: none;
+                }
+            }
+        }
+
+    }
 }
+
 
 // heading font
 h1{
@@ -97,6 +152,14 @@ h1{
 
 h2{
     @include header(3rem, 6%);
+}
+
+h3{
+    @include header(1.5rem, 4%);
+}
+
+h4{
+    @include header(1rem, 1%);
 }
 
 h5{
@@ -110,8 +173,13 @@ h5{
     .text-content{
         margin-top: 17%;
     }
+
+    h5{
+        color: $body-text;
+    }
+
     p{
-        @include desc;
+        @include desc(8%);
     }
 
     .circle{
@@ -141,17 +209,49 @@ h5{
         padding-top: 4.5rem;
 
     }
+
+    @include mq(600px){ //media query for larger than 600px
+        p{
+            padding: 0% 22%;
+        }
+
+        .explore{
+            width: 15rem;
+            height: 15rem;
+            border-radius: 7.5rem;
+            padding-top: 6.5rem;
+        }
+        .circle{
+            margin: 5%;
+            &:hover{
+                font-size: 2rem;
+                width: 21rem;
+                height: 21rem;
+                border-radius: 10.5rem;
+            }
+           
+        }
+    }
 }
+
+
+
+// destination page styles
 
 .destinations{
     @include mainCompRendered('../assets/destination/background-destination-mobile.jpg', 25%);
+
+    // active tab style
+    .active{
+        color: $text-white;
+        border-bottom: 3px solid $text-white;
+    }
 
     h5{
         color: $text-white;
     }
     img{
-        width: 45%;
-        margin: 8%;
+        @include mobileImg(45%,8%);
     }
 
     .comp-nav{
@@ -164,14 +264,11 @@ h5{
                 border-bottom: 3px solid $text-white;
             } 
         }
-        .active{
-            color: $text-white;
-            border-bottom: 3px solid $text-white;
-        }
+        
     }
 
     .description{
-        @include desc;
+        @include desc(8%);
     }
     .travel-time{
         border-top: .1em solid $text-white;
@@ -180,6 +277,7 @@ h5{
 
         p{
             @include header5;
+            color: $body-text;
             span{
                 @include header(2rem, 5%);
                 display: block;
@@ -189,3 +287,87 @@ h5{
 
 }
 
+.crew{
+    @include mainCompRendered('../assets/crew/background-crew-mobile.jpg', 17%);
+
+    .crew-nav{
+        padding-top: 5%;
+        border-top: .1em solid $light-background;
+        p{
+            width: .7em;
+            height: .7em;
+            border-radius: .35em;
+            display: inline-block;
+            margin: 3%;
+            background-color: $light-background;
+
+            &:first-of-type{
+                background-color: $text-white;
+            } 
+            
+        }
+
+        .active{
+            background-color: $text-white;
+        } 
+    }
+
+    img{
+        @include mobileImg(47%,7%);
+        margin-bottom: 0%;
+    }
+
+    .details{
+        padding-top: 5%;
+
+        p{
+            @include desc(5%);
+            padding: 0 5%;
+        }
+    }
+}
+
+
+// styles for the technology section
+.technology{
+    @include mainCompRendered('../assets/technology/background-technology-mobile.jpg', 20%);
+
+    img{
+        @include mobileImg(100%,0);
+        margin: 7% 0;
+    }
+
+    .tech-nav{
+        p{
+            display: inline-block;
+            margin: 0 3%;
+            padding: .25rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 1rem;
+            border: .1em solid $text-white;
+
+            &:first-of-type{
+                color: $dark-background;
+                background-color: $text-white;
+            } 
+        }
+
+        .active{
+            color: $dark-background;
+            background-color: $text-white;
+        } 
+    }
+
+    .details{
+        margin-top: 8%;
+
+        h5{
+            color: $body-text;
+        }
+
+        p{
+            @include desc(5%); 
+        }
+    }
+}
