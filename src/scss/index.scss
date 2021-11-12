@@ -152,10 +152,16 @@ h1{
 
 h2{
     @include header(3rem, 6%);
+    @include mq(600px){
+        margin: 2%;
+    }
 }
 
 h3{
     @include header(1.5rem, 4%);
+    @include mq(600px){
+        margin: 2%;
+    }
 }
 
 h4{
@@ -211,20 +217,29 @@ h5{
     }
 
     @include mq(600px){ //media query for larger than 600px
+        @include mainCompRendered('../assets/home/background-home-tablet.jpg', 12%);
+        h1{
+            margin: 0;
+        }
+        h5{
+            text-align: center;
+        }
         p{
             padding: 0% 22%;
         }
 
         .explore{
+            font-size: 2rem;
             width: 15rem;
             height: 15rem;
             border-radius: 7.5rem;
-            padding-top: 6.5rem;
+            padding-top: 7rem;
         }
         .circle{
-            margin: 5%;
+            
+            margin: 15%;
             &:hover{
-                font-size: 2rem;
+                
                 width: 21rem;
                 height: 21rem;
                 border-radius: 10.5rem;
@@ -285,6 +300,36 @@ h5{
         }
     }
 
+    @include mq(600px){ //media query for screens larger than 600px
+        padding: 5%;
+        @include mainCompRendered('../assets/destination/background-destination-tablet.jpg', 15%);
+        
+        img{
+            @include mobileImg(40%,7%);
+        }
+
+        .comp-nav p{
+            font-size: 1rem;
+        }
+
+        .travel-time{
+            padding: 3%;
+            p{
+                text-align: center;
+                display: inline-block;
+
+                span{
+                    font-size: 1.5rem;
+                }
+            }
+            
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 5%;
+            
+        }
+    }
+
 }
 
 .crew{
@@ -325,12 +370,58 @@ h5{
             padding: 0 5%;
         }
     }
+
+    @include mq(600px){
+        @include mainCompRendered('../assets/crew/background-crew-tablet.jpg', 17%);
+        padding: 17% 5% 0%;
+        .content div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: fit-content;
+
+            h3{
+                width: 100%;
+                font-size: 2rem;
+            }
+            h4{
+                font-size: 1.5rem;
+            }
+            
+            .one{
+                width: 100%;
+                padding: 0 12%;
+                order: 3;
+            }
+            .crew-nav{
+                border: none;
+                width: 100%;
+                order: 2;
+
+                p{
+                    margin: 0.5rem;
+                }
+            }
+
+            img{
+                @include mobileImg(90%,10%);
+                margin-bottom: 0%;
+            }
+
+            .details p{
+                padding: 0 17%;
+            }
+        }
+    }
 }
+
+
 
 
 // styles for the technology section
 .technology{
     @include mainCompRendered('../assets/technology/background-technology-mobile.jpg', 20%);
+
 
     img{
         @include mobileImg(100%,0);
@@ -368,6 +459,35 @@ h5{
 
         p{
             @include desc(5%); 
+        }
+    }
+
+    
+    @include mq(600px){ // media query for screens larger than 600px
+        @include mainCompRendered('../assets/technology/background-technology-tablet.jpg', 15%);
+        img{
+            margin: 5% 0;
+        }
+        h5{
+            padding-left: 5%;
+        }
+
+        .tech-nav{
+            p{
+                margin: 0 .5rem;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 1.5rem;
+                padding-top: .6rem;
+            }
+        }
+
+        .details{
+            h5{
+                text-align: center;
+            }
+
+            padding: 0 20%;
         }
     }
 }

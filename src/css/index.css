@@ -157,6 +157,11 @@ h2 {
     font-size: 6rem;
   }
 }
+@media screen and (min-width: 600px) {
+  h2 {
+    margin: 2%;
+  }
+}
 
 h3 {
   font-family: "Bellefair", serif;
@@ -169,6 +174,11 @@ h3 {
 @media screen and (min-width: 600px) {
   h3 {
     font-size: 3rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  h3 {
+    margin: 2%;
   }
 }
 
@@ -204,6 +214,12 @@ h5 {
 }
 h5 span {
   color: #9797976b;
+}
+@media screen and (min-width: 600px) {
+  h5 {
+    text-align: left;
+    font-size: 1.5rem;
+  }
 }
 
 .home {
@@ -250,20 +266,33 @@ h5 span {
   padding-top: 4.5rem;
 }
 @media screen and (min-width: 600px) {
+  .home {
+    padding-top: 12%;
+    min-height: 100vmax;
+    height: max-content;
+    background: #0c0e18 url("../assets/home/background-home-tablet.jpg") center center/cover no-repeat fixed;
+    z-index: -2;
+  }
+  .home h1 {
+    margin: 0;
+  }
+  .home h5 {
+    text-align: center;
+  }
   .home p {
     padding: 0% 22%;
   }
   .home .explore {
+    font-size: 2rem;
     width: 15rem;
     height: 15rem;
     border-radius: 7.5rem;
-    padding-top: 6.5rem;
+    padding-top: 7rem;
   }
   .home .circle {
-    margin: 5%;
+    margin: 15%;
   }
   .home .circle:hover {
-    font-size: 2rem;
     width: 21rem;
     height: 21rem;
     border-radius: 10.5rem;
@@ -310,6 +339,12 @@ h5 span {
 .destinations .comp-nav p span {
   color: #9797976b;
 }
+@media screen and (min-width: 600px) {
+  .destinations .comp-nav p {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+}
 .destinations .comp-nav p:first-of-type {
   border-bottom: 3px solid white;
 }
@@ -343,6 +378,12 @@ h5 span {
 .destinations .travel-time p span {
   color: #9797976b;
 }
+@media screen and (min-width: 600px) {
+  .destinations .travel-time p {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+}
 .destinations .travel-time p span {
   font-family: "Bellefair", serif;
   font-weight: normal;
@@ -355,6 +396,36 @@ h5 span {
 @media screen and (min-width: 600px) {
   .destinations .travel-time p span {
     font-size: 4rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .destinations {
+    padding: 5%;
+    padding-top: 15%;
+    min-height: 100vmax;
+    height: max-content;
+    background: #0c0e18 url("../assets/destination/background-destination-tablet.jpg") center center/cover no-repeat fixed;
+    z-index: -2;
+  }
+  .destinations img {
+    width: 40%;
+    margin: 7%;
+  }
+  .destinations .comp-nav p {
+    font-size: 1rem;
+  }
+  .destinations .travel-time {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5%;
+  }
+  .destinations .travel-time p {
+    text-align: center;
+    display: inline-block;
+  }
+  .destinations .travel-time p span {
+    font-size: 1.5rem;
   }
 }
 
@@ -397,6 +468,50 @@ h5 span {
   line-height: 1.5rem;
   padding: 0 5%;
 }
+@media screen and (min-width: 600px) {
+  .crew {
+    padding-top: 17%;
+    min-height: 100vmax;
+    height: max-content;
+    background: #0c0e18 url("../assets/crew/background-crew-tablet.jpg") center center/cover no-repeat fixed;
+    z-index: -2;
+    padding: 17% 5% 0%;
+  }
+  .crew .content div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+  }
+  .crew .content div h3 {
+    width: 100%;
+    font-size: 2rem;
+  }
+  .crew .content div h4 {
+    font-size: 1.5rem;
+  }
+  .crew .content div .one {
+    width: 100%;
+    padding: 0 12%;
+    order: 3;
+  }
+  .crew .content div .crew-nav {
+    border: none;
+    width: 100%;
+    order: 2;
+  }
+  .crew .content div .crew-nav p {
+    margin: 0.5rem;
+  }
+  .crew .content div img {
+    width: 90%;
+    margin: 10%;
+    margin-bottom: 0%;
+  }
+  .crew .content div .details p {
+    padding: 0 17%;
+  }
+}
 
 .technology {
   padding-top: 20%;
@@ -437,6 +552,34 @@ h5 span {
   font-family: "Barlow", sans-serif;
   padding: 0% 5%;
   line-height: 1.5rem;
+}
+@media screen and (min-width: 600px) {
+  .technology {
+    padding-top: 15%;
+    min-height: 100vmax;
+    height: max-content;
+    background: #0c0e18 url("../assets/technology/background-technology-tablet.jpg") center center/cover no-repeat fixed;
+    z-index: -2;
+  }
+  .technology img {
+    margin: 5% 0;
+  }
+  .technology h5 {
+    padding-left: 5%;
+  }
+  .technology .tech-nav p {
+    margin: 0 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    padding-top: 0.6rem;
+  }
+  .technology .details {
+    padding: 0 20%;
+  }
+  .technology .details h5 {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

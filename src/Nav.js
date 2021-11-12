@@ -4,9 +4,9 @@ import iconOpen from './assets/shared/icon-hamburger.svg';
 import iconClose from './assets/shared/icon-close.svg';
 
 const Nav = () => {
+	
 
 	const setActive = () => {
-		
 		document.querySelectorAll('.nav li').forEach(nav => nav.classList.remove('active'));
 		const path = window.location.pathname.split('/')[1];
 		if(path){
@@ -24,6 +24,10 @@ const Nav = () => {
 		}
 
 		
+	}
+
+	window.onload = (e) => {
+		setActive();
 	}
 	
 	document.addEventListener('click', (e) => {
