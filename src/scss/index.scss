@@ -410,7 +410,7 @@ h5{
     }
     
 
-    @include mq(1440px){
+    @include mq(1024px){
         min-height: 100vh;
 
         h5{
@@ -549,6 +549,73 @@ h5{
             .details p{
                 padding: 0 17%;
             }
+        }
+    }
+
+    @include mq(1024px){
+        @include mainCompRendered('../assets/crew/background-crew-desktop.jpg', 17%);
+        padding: 15% 5% 0% 10%;
+        min-height: 100vh;
+
+        h5{
+            font-size: 1.5rem;
+            margin: 0 0 5% 0;
+        }
+
+        .content>div{
+            overflow-y: hidden;
+            display: grid;
+            height: 65vh;
+            grid-template-columns: 50% 45% 5%;
+            grid-template-rows: 60% 40%;
+
+            .crew-nav{
+                display: block;
+                grid-row: 2;
+                text-align: left;
+                padding-top: 20%;
+
+                p{
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: .5rem;
+                    margin-right: 5%;
+                }
+            }
+
+
+            .details{
+                display: block;
+                padding-top: 15%;
+                h3,h4,p{
+                    text-align: left;
+                }
+                h4{
+                    color: $light-background;
+                    font-size: 2rem;
+                }
+                h3{
+                    font-size: 4rem;
+                    margin: 0;
+                }
+                p{
+                    padding: 0 25% 0 0;
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                }
+            }
+            .one{
+                padding: 0;
+                display: block;
+                grid-column: 2/span 1;
+                grid-row: 1/span 2;
+            }
+        }
+
+
+        .content div img{
+            width: inherit;
+            margin: 0% 5% 0% 0%;
         }
     }
 }
