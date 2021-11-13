@@ -5,6 +5,10 @@ import LaunchVehicle from '../assets/technology/image-launch-vehicle-landscape.j
 import SpaceCapsule from '../assets/technology/image-space-capsule-landscape.jpg';
 import Spaceport from '../assets/technology/image-spaceport-landscape.jpg';
 
+import LaunchVehiclePortrait from '../assets/technology/image-launch-vehicle-portrait.jpg';
+import SpaceCapsulePortrait from '../assets/technology/image-space-capsule-portrait.jpg';
+import SpaceportPortrait from '../assets/technology/image-spaceport-portrait.jpg';
+
 const Tech = () => {
     const {data} = useContext(DataContext);
 
@@ -31,7 +35,16 @@ const Tech = () => {
 
 
     const findImage = (name) => {
-        return (name === 'Spaceport') ? Spaceport : (name === 'Space') ? SpaceCapsule : LaunchVehicle;
+        if(window.screen.width > 1024){
+            return (name === 'Spaceport') ? SpaceportPortrait
+            : (name === 'Space') ? SpaceCapsulePortrait
+            : LaunchVehiclePortrait;
+        }else{
+            return (name === 'Spaceport') ? Spaceport
+            : (name === 'Space') ? SpaceCapsule
+            : LaunchVehicle;
+        }
+        
     }
 
 
