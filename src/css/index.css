@@ -323,6 +323,47 @@ h5 span {
     border-radius: 10.5rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .home {
+    padding-top: 12%;
+    min-height: 100vmax;
+    height: max-content;
+    background: #0c0e18 url("../assets/home/background-home-desktop.jpg") center center/cover no-repeat fixed;
+    z-index: -2;
+    min-height: 100vh;
+  }
+  .home .home-content {
+    margin-top: 10%;
+    padding: 0% 0% 0% 5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .home .text-content {
+    margin-top: 15%;
+    padding: 0% 12%;
+  }
+  .home h1 {
+    text-align: left;
+    font-size: 9.4rem;
+  }
+  .home h5 {
+    color: #d2d8f9;
+    text-align: left;
+    letter-spacing: 0.37rem;
+    margin-bottom: 3%;
+  }
+  .home p {
+    font-family: "Barlow", sans-serif;
+    padding: 0% 0%;
+    line-height: 1.5rem;
+    text-align: left;
+    padding: 4% 13% 0% 0%;
+  }
+  .home .circle {
+    margin: 19% 0% 0% 42%;
+    text-align: left;
+  }
+}
 
 .destinations {
   padding-top: 25%;

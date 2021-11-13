@@ -280,6 +280,46 @@ h5{
            
         }
     }
+
+    @include mq(1024px){
+        @include mainCompRendered('../assets/home/background-home-desktop.jpg', 12%);
+        min-height: 100vh;
+        
+        .home-content{
+            margin-top: 10%;
+            padding: 0% 0% 0% 5%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .text-content{
+            margin-top: 15%;
+            padding: 0% 12%;
+        }
+
+        h1{
+            text-align: left;
+            font-size: 9.4rem;
+        }
+
+        h5{
+            color: $body-text;
+            text-align: left;
+            letter-spacing: 0.37rem;
+            margin-bottom: 3%;
+        }
+    
+        p{
+            @include desc(0%);
+            text-align: left;
+            padding: 4% 13% 0% 0%;
+        }
+
+        .circle{
+            margin: 19% 0% 0% 42%;
+            text-align: left;
+        }
+    }
 }
 
 
