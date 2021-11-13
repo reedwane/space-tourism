@@ -146,15 +146,6 @@ body .App {
     height: 0.2em;
     background-color: #9797976b;
   }
-}
-@media screen and (min-width: 1024px) and (min-width: 1450px) {
-  .nav ul {
-    position: relative;
-    max-width: 830px;
-    margin-left: auto;
-  }
-}
-@media screen and (min-width: 1024px) {
   .nav ul li {
     margin-right: 3.5rem;
   }
@@ -162,6 +153,15 @@ body .App {
     display: inline;
     margin: 0%;
   }
+}
+@media screen and (min-width: 1441px) {
+  .nav {
+    position: sticky;
+  }
+}
+
+.crew-nav p, .tech-nav p, .comp-nav p {
+  cursor: pointer;
 }
 
 h1 {
@@ -370,7 +370,7 @@ h5 span {
   }
   .home .circle {
     margin: 19% 0% 0% 42%;
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -655,9 +655,8 @@ h5 span {
     margin: 0 0 5% 0;
   }
   .crew .content > div {
-    overflow-y: hidden;
     display: grid;
-    height: 65vh;
+    min-height: 65vh;
     grid-template-columns: 50% 45% 5%;
     grid-template-rows: 60% 40%;
   }
@@ -771,6 +770,72 @@ h5 span {
   }
   .technology .details h5 {
     text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .technology {
+    padding-top: 17%;
+    min-height: 100vmax;
+    height: max-content;
+    background: #0c0e18 url("../assets/technology/background-technology-desktop.jpg") center center/cover no-repeat fixed;
+    z-index: -2;
+    min-height: 100vh;
+    padding: 15% 0% 0% 10%;
+  }
+  .technology h5 {
+    font-size: 1.5rem;
+    margin: 0 0 5% 0;
+  }
+  .technology .content > div {
+    display: grid;
+    min-height: 65vh;
+    grid-template-columns: 15% 45% 40%;
+    grid-template-rows: 60% 20%;
+  }
+  .technology .content > div .tech-nav {
+    display: block;
+    padding-top: 20%;
+    grid-row: 1/span 2;
+  }
+  .technology .content > div .tech-nav p {
+    margin: 0 auto 20%;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+  }
+  .technology .content > div .details {
+    display: block;
+    padding: 0;
+  }
+  .technology .content > div .details h3, .technology .content > div .details h5, .technology .content > div .details p {
+    text-align: left;
+  }
+  .technology .content > div .details h5 {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0 0 2% 0;
+  }
+  .technology .content > div .details h3 {
+    font-size: 3.5rem;
+    margin: 0;
+  }
+  .technology .content > div .details p {
+    padding: 0 25% 0 0;
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  .technology .content > div .one {
+    padding: 0;
+    display: block;
+    grid-column: 3/span 1;
+    grid-row: 1/span 2;
+  }
+  .technology .content div img {
+    width: 100%;
+    margin: 0% 5% 0% 0%;
   }
 }
 
