@@ -20,7 +20,9 @@ const Nav = () => {
 			}
 		}else{
 			document.querySelectorAll('.nav li').forEach(nav => nav.classList.remove('active'));
-			document.querySelector('.nav li:first-of-type').style.borderBottom = '2px solid #FFFFFF';	
+			if(window.screen.width > 600){
+				document.querySelector('.nav li:first-of-type').style.borderBottom = '2px solid #FFFFFF';	
+			}
 		}
 
 		
