@@ -503,6 +503,59 @@ h5 span {
     font-size: 1.5rem;
   }
 }
+@media screen and (min-width: 1440px) {
+  .destinations {
+    min-height: 100vh;
+  }
+  .destinations h5 {
+    letter-spacing: 0.4rem;
+  }
+}
+@media screen and (min-width: 1440px) and (min-width: 1450px) {
+  .destinations h5 {
+    margin-top: 5%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .destinations .content div {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 3rem 7.5rem 10rem 5rem;
+    padding: 5%;
+  }
+  .destinations .content div h2, .destinations .content div p, .destinations .content div span, .destinations .content div .comp-nav {
+    text-align: left;
+  }
+  .destinations .content div .comp-nav {
+    padding: 0;
+    display: block;
+  }
+  .destinations .content div .travel-time, .destinations .content div .travel-time span, .destinations .content div h2 {
+    margin: 0;
+    padding: 0;
+  }
+  .destinations .content div .description {
+    padding: 0 15% 0 0;
+  }
+  .destinations .content div .travel-time {
+    display: block;
+    text-align: left;
+  }
+  .destinations .content div .travel-time p {
+    font-size: 0.8rem;
+    margin: 3% 15% 0% 0%;
+  }
+  .destinations .content div .travel-time span {
+    margin-top: 5%;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .destinations img {
+    grid-row: 1/span 4;
+    width: 60%;
+  }
+}
 
 .crew {
   padding-top: 17%;

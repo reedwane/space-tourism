@@ -408,7 +408,63 @@ h5{
             
         }
     }
+    
 
+    @include mq(1440px){
+        min-height: 100vh;
+
+        h5{
+            letter-spacing: 0.4rem;
+            @include mq(1450px){
+                margin-top: 5%;
+            }
+        }
+
+        .content div{
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 3rem 7.5rem 10rem 5rem;
+            padding: 5%;
+
+            h2,p,span, .comp-nav{
+                text-align: left;
+            }
+            .comp-nav{
+                padding: 0;
+                display: block;
+            }
+            .travel-time, .travel-time span, h2{
+                margin: 0;
+                padding: 0;
+            }
+            .description{
+                padding: 0 15% 0 0;
+            }
+
+            .travel-time {
+                display: block;
+                text-align: left;
+                p{
+                    font-size: .8rem;
+                    margin: 3% 15% 0% 0%;
+                }
+
+                span{
+                    margin-top: 5%;
+                    font-size: 1.5rem;
+                }
+            }
+            
+        }
+
+        img{
+            grid-row: 1/span 4;
+            width: 60%;
+        }
+
+        
+        
+    }
 }
 
 
