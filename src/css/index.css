@@ -129,6 +129,31 @@ body .App {
     display: none;
   }
 }
+@media screen and (min-width: 1024px) {
+  .nav {
+    margin-top: 3.5%;
+  }
+  .nav img {
+    padding: 0;
+    width: 3.3%;
+    margin: 2% 4%;
+  }
+  .nav .line {
+    display: inline-block;
+    position: absolute;
+    margin: 3.5% 0% 0% 1%;
+    width: 32%;
+    height: 0.2em;
+    background-color: #9797976b;
+  }
+  .nav ul li {
+    margin-right: 3.5rem;
+  }
+  .nav ul li a .number {
+    display: inline;
+    margin: 0%;
+  }
+}
 
 h1 {
   font-family: "Bellefair", serif;

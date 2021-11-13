@@ -75,6 +75,7 @@ const Nav = () => {
 				<img src={iconClose} alt="hamburger"  className='ham opened' onClick={toggleNavClose} />
 			</div>
 
+			<span className='line'></span>
 			<ul className='hide' onClick={() => setActive()}>
 				<li>
 					<Link to='/'><span className="number">00</span> Home</Link>

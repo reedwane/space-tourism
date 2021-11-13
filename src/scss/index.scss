@@ -142,6 +142,39 @@ body{
         }
 
     }
+
+    @include mq(1024px){
+        margin-top: 3.5%;
+        
+
+        img{
+            padding: 0;
+            width: 3.3%;
+            margin: 2% 4%;
+        }
+        .line{
+            display: inline-block;
+            position: absolute;
+            margin: 3.5% 0% 0% 1%;
+            width: 32%;
+            height: .2em;
+            background-color: $light-background;
+        }
+
+        ul{
+            
+            li{
+                margin-right: 3.5rem;
+                a{
+                    .number{
+                        display: inline;
+                        margin: 0%;
+                    }
+                }
+                
+            }
+        }
+    }
 }
 
 
@@ -331,6 +364,9 @@ h5{
     }
 
 }
+
+
+// styles for the crew pages
 
 .crew{
     @include mainCompRendered('../assets/crew/background-crew-mobile.jpg', 17%);
