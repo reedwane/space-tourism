@@ -12,7 +12,7 @@
 
 // body styles
 body{
-    background-color: $dark-background;
+    background: $dark-background url('../assets/crew/background-crew-desktop.jpg') center center/cover no-repeat fixed;
     color: $body-text;
     width: 100vw;
     max-width: 1440px;
@@ -162,6 +162,12 @@ body{
         }
 
         ul{
+            @include mq(1450px){ // for screens larger than 1440px
+                position: relative;
+                max-width: 830px;
+                margin-left: auto;
+            }
+            
             
             li{
                 margin-right: 3.5rem;
